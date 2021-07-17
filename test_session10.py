@@ -12,8 +12,8 @@ import os
 import re
 
 README_CONTENT_CHECK_FOR = [
-    'polygon',
-    'poly_sequence',
+    'Polygon',
+    'Poly_sequence',
     'max_efficiency',
 ]
 
@@ -71,7 +71,7 @@ def test_polygon_indentations():
     failures_message_1: Your script contains misplaced indentations
     failures_message_2: Your code indentation does not follow PEP8 guidelines
     """
-    lines = inspect.getsource(polygon)
+    lines = inspect.getsource(Polygon)
     spaces = re.findall('\n +.', lines)
     for space in spaces:
         assert len(space) % 4 == 2, "Your script contains misplaced indentations"
@@ -113,25 +113,28 @@ def test_poly_seq_function_name_had_cap_letter():
 
 
 def test_polygon_incorrect_params():
-    assert any(['Error' in Polygon(0, 0)])
+    assert any(['TypeError' in Polygon(0, 0)])
 
 
-def test_polygon_incorrect_param_types():
-    output = Polygon(0, "0")
-    assert any(['Error' in output])
+def test_polygon_param_types():
+    p = Polygon(6, 2)
+    assert math.isclose(p.side_length, 2,
+                        rel_tol=rel_tol, abs_tol=abs_tol)
+    assert math.isclose(p.apothem, 1.73205,
+                        rel_tol=rel_tol, abs_tol=abs_tol)
+    assert math.isclose(p.area, 10.3923,
+                        rel_tol=rel_tol, abs_tol=abs_tol)
+    assert math.isclose(p.perimeter, 12,
+                        rel_tol=rel_tol, abs_tol=abs_tol)
+    assert math.isclose(p.interior_angle, 120,
+                        rel_tol=rel_tol, abs_tol=abs_tol)
 
 
 def test_polygon_sequence_incorrect_param_types():
     output = Poly_sequence('10', 15)
-    assert any(['Error' in output])
-
-
-def test_polygon_sequence_incorrect_param_types1():
-    poly = Poly_sequence(10, 15)
-    output = poly['1']
-    assert any(['Error' in output])
+    assert any(['TypeError' in output])
 
 
 def test_polygon_sequence_incorrect_params():
     output = Poly_sequence(10, 0)
-    assert any(['Error' in output])
+    assert any(['IndexError' in output])
