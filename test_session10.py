@@ -107,6 +107,8 @@ def test_polygon_incorrect_params():
 
 def test_polygon_param_types():
     p = Polygon(6, 2)
+    abs_tol = 0.001
+    rel_tol = 0.001
     assert math.isclose(p.apothem, 1.73205,
                         rel_tol=rel_tol, abs_tol=abs_tol)
     assert math.isclose(p.area, 10.3923,
