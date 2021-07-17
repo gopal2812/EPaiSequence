@@ -78,14 +78,14 @@ def test_polygon_indentations():
         assert len(re.sub(r'[^ ]', '', space)) % 4 == 0, "Your code indentation does not follow PEP8 guidelines"
 
 
-def test_poly_list_indentations():
+def test_poly_sequence_indentations():
     """
     Method checks for proper indentations
     Returns pass if used four spaces for each level of syntactically significant indenting.
     failures_message_1: Your script contains misplaced indentations
     failures_message_2: Your code indentation does not follow PEP8 guidelines
     """
-    lines = inspect.getsource(poly_list)
+    lines = inspect.getsource(Poly_sequence)
     spaces = re.findall('\n +.', lines)
     for space in spaces:
         assert len(space) % 4 == 2, "Your script contains misplaced indentations"
@@ -97,17 +97,17 @@ def test_polygon_function_name_had_cap_letter():
     Method checks for any Upper case in the function names in session10.py
     failures_message: You have used Capital letter(s) in your function names
     """
-    functions = inspect.getmembers(polygon, inspect.isfunction)
+    functions = inspect.getmembers(Poly_sequence, inspect.isfunction)
     for function in functions:
         assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
 
 
-def test_poly_list_function_name_had_cap_letter():
+def test_poly_seq_function_name_had_cap_letter():
     """
     Method checks for any Upper case in the function names in session10.py
     failures_message: You have used Capital letter(s) in your function names
     """
-    functions = inspect.getmembers(poly_list, inspect.isfunction)
+    functions = inspect.getmembers(Poly_sequence, inspect.isfunction)
     for function in functions:
         assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
 
