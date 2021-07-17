@@ -14,20 +14,7 @@ import re
 README_CONTENT_CHECK_FOR = [
     'polygon',
     'poly_sequence',
-    'init',
-    'repr',
-    'eq',
-    'gt',
-    'len',
-    'getitem',
-    'area',
-    'perimeter',
-    'apothem',
-    'circumradius',
-    'edge_length',
     'max_efficiency',
-    'n_edges',
-    'get_polygon',
 ]
 
 def test_session10_readme_exists():
