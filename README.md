@@ -33,7 +33,7 @@ Sequence Types
           * a proper __repr__ function
           * implements equality (==) based on # vertices and circumradius (__eq__)
           * implements > based on number of vertices only (__gt__)
-
+```
 class Polygon(builtins.object)
  |  Polygon(n_edges: int, circumradius: float)
  |  
@@ -90,7 +90,7 @@ class Polygon(builtins.object)
  |  Data and other attributes defined here:
  |  
  |  __hash__ = None
-
+```
 
 4. **Objective 2**:
     Implement a Custom Polygon sequence type:
@@ -104,7 +104,7 @@ class Polygon(builtins.object)
         * functions as a sequence type (__getitem__)
         * supports the len() function (__len__)
         * has a proper representation (__repr__)
- class Poly_sequence(builtins.object)
+ ```class Poly_sequence(builtins.object)
  |  Poly_sequence(n_edges: int, circumradius: float)
  |  
  |  Custom polygon sequence containing polygons where maximum number of edges in a polygon is given
@@ -141,8 +141,10 @@ class Polygon(builtins.object)
  |  
  |  __weakref__
  |      list of weak references to the object (if defined)
+ ```
  
- 
+```
 p = Poly_sequence(25,5)
 p.max_efficiency()
-Polygon with 25 vertices has the Max Efficiency of 2.4802867532861947
+```
+**Polygon with 25 vertices has the Max Efficiency of 2.4802867532861947**
