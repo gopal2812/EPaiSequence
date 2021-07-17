@@ -98,7 +98,11 @@ def test_poly_seq_function_name_had_cap_letter():
 
 
 def test_polygon_incorrect_params():
-    assert any(['IndexError:' in Polygon(0, 0)])
+    try:
+        Polygon(0, 0)
+        assert False
+    except IndexError:
+        assert True
 
 
 def test_polygon_param_types():
@@ -114,10 +118,16 @@ def test_polygon_param_types():
 
 
 def test_polygon_sequence_incorrect_param_types():
-    output = Poly_sequence('10', 15)
-    assert any(['TypeError:' in output])
+    try:
+        output = Poly_sequence('10', 15)
+        assert False
+    except TypeError:
+        assert True
 
 
 def test_polygon_sequence_incorrect_params():
-    output = Poly_sequence(10, 0)
-    assert any(['IndexError:' in output])
+    try:
+        output = Poly_sequence(10, 0)
+        assert False
+    except IndexError:
+        assert True
