@@ -95,6 +95,22 @@ class Polygon(builtins.object)
  |  __hash__ = None
 ```
 
+Decorators
+@validate_params
+ * This decorator is used to validate the parameters passed to the Polygon Class during object creation and it checks the following:
+   Checks if number of vertices/polygons provided is less than 3 or not.   
+   Checks if the Circum Radius provided is less than 0 or not.
+* If both the above conditions are satisfied, it throws an Indexerror Exception
+* It also checks for the types of both params and incase of error, it throws Type Exception.
+
+It used this type provided as argument and checks if all the arguments passed to a function is of this type.
+If only this condition is satified, the function is executed else an error message is returned.
+@validate_params
+
+
+
+t
+
 4. **Objective 2**:
     Implement a Custom Polygon sequence type:
     
